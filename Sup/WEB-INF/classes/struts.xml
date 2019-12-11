@@ -1,0 +1,75 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+
+		<action name="register" class="sup.ObjectMapping" method ="register">
+            <result name="SUCCESS">/index.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+        </action>
+
+    <action name="newUser">
+            <result>/register.jsp</result>
+        </action>
+
+    <action name="backToProfile">
+            <result>/profile.jsp</result>
+        </action>
+
+        <action name="editBioPage">
+                <result>/editBio.jsp</result>
+            </action>
+
+        <action name="friendProfile" class="sup.ObjectMapping" method ="getFriendProfile">
+          <result name="SUCCESS">/memberProfile.jsp</result>
+          <result name="FAIL">/fail.jsp</result>
+            </action>
+
+    <action name="login" class="sup.ObjectMapping" method ="login">
+            <result name="SUCCESS">/profile.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+            <result name="LOGIN ERROR">/loginFail.jsp</result>
+        </action>
+
+    <action name="viewAllUsers" class="sup.ObjectMapping" method ="users">
+            <result name="SUCCESS">/users.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+        </action>
+
+        <action name="logOff" class="sup.ObjectMapping" method ="logoff">
+                <result name="SUCCESS">/logoff.jsp</result>
+                <result name="FAIL">/fail.jsp</result>
+            </action>
+
+        <action name="addFriend" class="sup.ObjectMapping" method ="addFriend">
+                <result name="SUCCESS">/addedFriend.jsp</result>
+                <result name="FAIL">/alreadyFriends.jsp</result>
+            </action>
+
+        <action name="editBio" class="sup.ObjectMapping" method ="editBio">
+                <result name="SUCCESS">/profile.jsp</result>
+                <result name="FAIL">/fail.jsp</result>
+            </action>
+
+        <action name="viewFriends" class="sup.ObjectMapping" method ="viewFriends">
+              <result name="SUCCESS">/friends.jsp</result>
+              <result name="FAIL">/fail.jsp</result>
+              <result name="NO FRIENDS">/noFriends.jsp</result>
+          </action>
+
+      <action name="postComment" class="sup.ObjectMapping" method ="addComment">
+            <result name="SUCCESS">/commentPosted.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+        </action>
+
+      <action name="postCommentOnProfile" class="sup.ObjectMapping" method ="addCommentProfile">
+            <result name="SUCCESS">/commentPosted.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+        </action>
+
+
+
+    </package>
+</struts>
